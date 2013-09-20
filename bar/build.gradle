@@ -1,0 +1,4 @@
+dependencies {
+    compile project(':abe')
+    testCompile project(path: ':abe', configuration: 'tests')
+}

@@ -1,0 +1,34 @@
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+    }
+
+    configurations {
+        provided
+    }
+
+    sourceSets {
+        main {
+            compileClasspath += configurations.provided
+
+            java {
+                srcDirs = ['src']
+            }
+        }
+
+        test {
+            java {
+                srcDirs = ['test']
+            }
+        }
+
+        buildDir = 'gradleBuild'
+    }
+
+    dependencies {
+        compile 'junit:junit:4.+'
+    }
+}
